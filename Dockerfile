@@ -3,10 +3,10 @@ MAINTAINER jeanycyang
 
 RUN mkdir -p /var/www/app
 WORKDIR /var/www/app
-COPY ./package.json /var/www/app
+COPY ./package.json ./yarn.lock /var/www/app/
 
 # RUN apk --update --no-cache --virtual dev-dependencies add git python make g++
-RUN yarn
+RUN yarn --pure-lockfile
 
 COPY . /var/www/app
 RUN npm run build
