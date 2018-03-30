@@ -11,6 +11,6 @@ node1:
     ports:
         - "4000"
 redis:
-    image: redis:3.2-alpine
+    image: redis:4-alpine
     ports:
         - "6379"
