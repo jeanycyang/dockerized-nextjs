@@ -1,0 +1,21 @@
+{
+  "name": "next-server-docker",
+  "version": "0.1.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "keywords": [
+    "node",
+    "docker",
+    "next",
+    "next.js",
+    "react"
+  ],
+  "author": "Jean Yang",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.16.3"
+  }
+}
