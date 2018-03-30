@@ -9,6 +9,11 @@ stop:
 docker-compose stop
 ```
 
+### dev mode
+- If there is anything changed in dev environment
+`docker-compose -f docker-compose.dev.yml build`
+- otherwise, just run `docker-compose -f docker-compose.dev.yml up`
+
 Docker build
 -
 ```
