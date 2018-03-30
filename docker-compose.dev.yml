@@ -12,6 +12,7 @@ node1:
         - "4000"
     volumes:
         - ./:/var/www/app
+    command: npm run dev
 redis:
     image: redis:3.2-alpine
     ports:

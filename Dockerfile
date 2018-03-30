@@ -9,11 +9,10 @@ COPY ./package.json /var/www/app
 RUN yarn
 
 COPY . /var/www/app
-# RUN npm run build
+RUN npm run build
 
 RUN yarn cache clean
 # RUN apk del dev-dependencies
 
 EXPOSE 4000
-CMD ["node", "index"]
-
+CMD ["npm", "start"]
