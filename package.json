@@ -4,6 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "start": "next start",
+    "build": "next build",
+    "dev": "next -p 4000",
     "test": "mocha"
   },
   "keywords": [
@@ -16,6 +19,9 @@
   "author": "Jean Yang",
   "license": "MIT",
   "dependencies": {
-    "express": "^4.16.3"
+    "express": "^4.16.3",
+    "next": "^5.1.0",
+    "react": "^16.3.0",
+    "react-dom": "^16.3.0"
   }
 }
