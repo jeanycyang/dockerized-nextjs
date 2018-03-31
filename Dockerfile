@@ -6,12 +6,11 @@ WORKDIR /var/www/app
 COPY ./package.json ./yarn.lock /var/www/app/
 
 # RUN apk --update --no-cache --virtual dev-dependencies add git python make g++
-RUN yarn --pure-lockfile
+RUN yarn install --frozen-lockfile --production && yarn cache clean
 
 COPY . /var/www/app
 RUN npm run build
 
-RUN yarn cache clean
 # RUN apk del dev-dependencies
 
 EXPOSE 4000
