@@ -6,9 +6,13 @@ const dev = process.env.NODE_ENV !== 'production'
 const app = next({ dev })
 const handle = app.getRequestHandler()
 
+const apiRoutes = require('./api')
+
 app.prepare()
   .then(() => {
     const server = express()
+
+    server.use('/api', apiRoutes)
 
     server.get('/login', (req, res) => app.render(req, res, '/login', req.query))
 
