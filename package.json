@@ -4,9 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "next start -p 4000",
+    "start": "NODE_ENV=production node server.js",
     "build": "next build",
-    "dev": "next -p 4000",
+    "dev": "node server.js",
     "test": "mocha"
   },
   "keywords": [
