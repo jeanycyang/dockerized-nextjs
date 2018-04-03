@@ -1,6 +1,7 @@
 const express = require('express')
 const next = require('next')
 const bodyParser = require('body-parser')
+const { errors: joiErrors } = require('celebrate')
 
 const port = parseInt(process.env.PORT, 10) || 4000
 const dev = process.env.NODE_ENV !== 'production'
@@ -21,6 +22,9 @@ app.prepare()
     server.use('/api', apiRoutes)
 
     server.get('/login', (req, res) => app.render(req, res, '/login', req.query))
+
+    /* celebrate middleware for joi errors */
+    server.use(joiErrors())
 
     server.get('*', (req, res) => handle(req, res))
 
