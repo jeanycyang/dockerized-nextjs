@@ -1,11 +1,15 @@
-nginx:
-    build: ./nginx
+version: '3'
+services:
+  nginx:
+    build:
+      context: ./nginx
     links:
         - node1:node1
     ports:
         - "49160:80"
-node1:
-    build: ./
+  node1:
+    build:
+      context: ./
     links:
         - redis
     ports:
@@ -13,7 +17,7 @@ node1:
     volumes:
         - ./:/var/www/app
     command: npm run dev
-redis:
+  redis:
     image: redis:4-alpine
     ports:
         - "6379"
