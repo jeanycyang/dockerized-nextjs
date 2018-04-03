@@ -19,11 +19,13 @@
   "author": "Jean Yang",
   "license": "MIT",
   "dependencies": {
+    "axios": "^0.18.0",
     "body-parser": "^1.18.2",
     "express": "^4.16.3",
     "next": "^5.1.0",
     "react": "^16.3.0",
-    "react-dom": "^16.3.0"
+    "react-dom": "^16.3.0",
+    "redis": "^2.8.0"
   },
   "devDependencies": {
     "babel-eslint": "^8.2.2",
