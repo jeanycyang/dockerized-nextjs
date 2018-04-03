@@ -1,7 +1,20 @@
 const router = require('express').Router()
 const axios = require('axios')
+const Joi = require('joi')
+const { celebrate } = require('celebrate')
 
 const redisClient = require('../redis')
+
+const signUpSchema = {
+  body: Joi.object().keys({
+    account: Joi.string().required(),
+    password: Joi.string().required(),
+  }),
+}
+router.post('/sign_up', celebrate(signUpSchema), (req, res) => {
+  const { account, password } = req.body
+  res.json({ account, password })
+})
 
 router.get('/analytics', (req, res) => {
   const { keyword } = req.query
